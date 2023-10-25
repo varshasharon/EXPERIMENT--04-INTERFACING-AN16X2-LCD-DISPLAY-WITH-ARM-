@@ -1,3 +1,8 @@
+```
+Name: E. Varsha Sharon
+Register Number: 212222100058
+```
+
 # EXPERIMENT--04-INTERFACING-AN16X2-LCD-DISPLAY-WITH-ARM AND DISPLAY STRING
 
 
@@ -173,15 +178,30 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 
 
 ## STM 32 CUBE PROGRAM :
+```
 
-
+#include "main.h"
+#include "lcd.h"
+MX_GPIO_Init();
+  /* USER CODE BEGIN 2 */
+  Lcd_PortType ports[]={GPIOA,GPIOA,GPIOA,GPIOA};
+  Lcd_PinType pins[]={GPIO_PIN_3,GPIO_PIN_2,GPIO_PIN_1,GPIO_PIN_0};
+  Lcd_HandleTypeDef lcd;
+  lcd = Lcd_create(ports,pins,GPIOB,GPIO_PIN_0,GPIOB,GPIO_PIN_1,LCD_4_BIT_MODE);
+  Lcd_cursor(&lcd,0,0);
+  Lcd_string(&lcd,"Varsha");
+  Lcd_cursor(&lcd,1,0);
+  Lcd_string(&lcd,"212222100058");
+```
 
 
 ## Output screen shots of proteus  :
  
- 
+ ![image](https://github.com/varshasharon/EXPERIMENT--04-INTERFACING-AN16X2-LCD-DISPLAY-WITH-ARM-/assets/98278161/9d2ce46f-8144-45b7-aeba-cad2fc55b637)
+
  ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
- 
+ ![image](https://github.com/varshasharon/EXPERIMENT--04-INTERFACING-AN16X2-LCD-DISPLAY-WITH-ARM-/assets/98278161/743dea07-4435-4657-bc2c-5dcdd0d9b94e)
+
  
 ## Result :
 Interfacing a lcd display with ARM microcontroller are simulated in proteus and the results are verified.
